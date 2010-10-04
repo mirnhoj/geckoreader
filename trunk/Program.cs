@@ -225,7 +225,7 @@ namespace GeckoReader
                                         }
                                         break;
                                     case 's':
-                                        OpenFileDialog ofd = new OpenFileDialog { Filter = "DOL/ELF Files|*.elf;*.dol|All files|*.*", Multiselect = false };
+                                        OpenFileDialog ofd = new OpenFileDialog { Filter = "DOL/ELF Files|*.elf;*.dol|Zip Files|*.zip|All Files|*.*", Multiselect = false, Title = "Select a file..." };
                                         if (ofd.ShowDialog() == DialogResult.OK)
                                         {
                                             Console.Write("Enter arguments: ");
@@ -277,7 +277,7 @@ namespace GeckoReader
                                 LogLine(seperator);
                                 LogLine(string.Format("Start sending file: '{0}'\r\n", currentSendFile));
                                 SendFile(serialPort, currentSendFile, currentArguments);
-                                LogLine("\nFile sent successfully, press S to send the file again.\r\n");
+                                LogLine("\nFile sent successfully, press shift+s to send the file again.\r\n");
                                 LogLine(seperator);
 
                                 currentSendFile = string.Empty;
